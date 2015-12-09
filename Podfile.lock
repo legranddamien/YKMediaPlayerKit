@@ -1,10 +1,13 @@
 PODS:
   - HCYoutubeParser (0.0.2)
+  - IGVimeoExtractor (1.2.0)
 
 DEPENDENCIES:
   - HCYoutubeParser (~> 0.0)
+  - IGVimeoExtractor (~> 1.2)
 
 SPEC CHECKSUMS:
-  HCYoutubeParser: d82d0b0e181c090a94f8f119fb2141303bc96ecf
+  HCYoutubeParser: cdfef410cd2ce6ee538a07ee4a1c9ed29069f544
+  IGVimeoExtractor: 84dd81e5bd7da82bcf99db246031edfda7313752
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.38.2
