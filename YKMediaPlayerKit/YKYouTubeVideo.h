@@ -7,14 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "YKVideo.h"
+#import "YKMainVideo.h"
 
-@interface YKYouTubeVideo : NSObject<YKVideo>
-
-/**
- Vimeo video url
- */
-@property (nonatomic, strong) NSURL *contentURL;
+@interface YKYouTubeVideo : YKMainVideo
 
 /**
  Videos found for above mentioned content url.

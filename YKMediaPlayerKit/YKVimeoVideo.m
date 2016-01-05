@@ -8,23 +8,15 @@
 
 #import "YKVimeoVideo.h"
 #import <IGVimeoExtractor/IGVimeoExtractor.h>
+#import "YKHelper.h"
 
 @interface YKVimeoVideo()
 @property (nonatomic, strong) NSString *videoID;
-@property (nonatomic, strong) MPMoviePlayerViewController *player;
 @end
 
 @implementation YKVimeoVideo
 
 #pragma mark - YKVideo Protocol
-
-- (instancetype)initWithContent:(NSURL *)contentURL {
-    self = [super init];
-    if (self) {
-        self.contentURL = contentURL;
-    }
-    return self;
-}
 
 - (void)parseWithCompletion:(void(^)(NSError *))callback {
     NSAssert(self.contentURL, @"Invalid contentURL");
@@ -57,7 +49,7 @@
 
 }
 
-+ (NSDictionary*) videosDictionary:(NSArray<IGVimeoVideo*>*) videos {
++ (NSDictionary*)videosDictionary:(NSArray<IGVimeoVideo*>*) videos {
 
     NSMutableDictionary<NSNumber*,NSURL*> * dict = [NSMutableDictionary dictionaryWithCapacity:videos.count];
     
@@ -70,7 +62,7 @@
     
 }
 
-+ (NSDictionary*) thumbsDictionary:(NSArray<IGVimeoVideo*>*) videos {
++ (NSDictionary*)thumbsDictionary:(NSArray<IGVimeoVideo*>*) videos {
     
     NSMutableDictionary<NSNumber*,NSURL*> * dict = [NSMutableDictionary dictionaryWithCapacity:videos.count];
     
@@ -82,6 +74,7 @@
     return dict;
     
 }
+
 - (void)thumbImage:(YKQualityOptions)quality completion:(void(^)(UIImage *, NSError *))callback {
     NSAssert(callback, @"usingBlock cannot be nil");
     
@@ -136,21 +129,6 @@
     }
 
     return url;
-}
-
-- (MPMoviePlayerViewController *)movieViewController:(YKQualityOptions)quality {
-    self.player = [[MPMoviePlayerViewController alloc] initWithContentURL:[self videoURL:quality]];
-    [self.player.moviePlayer setShouldAutoplay:NO];
-    [self.player.moviePlayer prepareToPlay];
-    
-    return self.player;
-}
-
-- (void)play:(YKQualityOptions)quality {
-    if (!self.player) [self movieViewController:quality];
-    
-    [[UIApplication sharedApplication].keyWindow.rootViewController presentMoviePlayerViewControllerAnimated:self.player];
-    [self.player.moviePlayer play];
 }
 
 #pragma mark - Properties

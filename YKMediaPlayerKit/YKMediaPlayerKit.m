@@ -7,6 +7,7 @@
 //
 
 #import "YKMediaPlayerKit.h"
+#import "YKHelper.h"
 
 //TODO: Implement NSURLCredential for secure URL access
 
@@ -24,8 +25,6 @@ NSString *const kSupportedVideos = @".mov, .mp4, .mpv, .3gp";
 NSString *const kVideoNotSupported = @"Video not supported";
 
 @interface YKMediaPlayerKit()
-@property (nonatomic, strong) MPMoviePlayerViewController *player;
-@property (nonatomic, strong) UIViewController *rootViewController;
 @property (nonatomic, strong) id<YKVideo> video;
 @property (nonatomic) YKVideoTypeOptions videoType;
 @end
@@ -97,23 +96,6 @@ NSString *const kVideoNotSupported = @"Video not supported";
     }];
 }
 
-#pragma mark - Private Methods
-
-- (MPMoviePlayerViewController *)movieViewController:(YKQualityOptions)quality {
-    self.player = [[MPMoviePlayerViewController alloc] initWithContentURL:self.contentURL];
-    [self.player.moviePlayer setShouldAutoplay:NO];
-    [self.player.moviePlayer prepareToPlay];
-    
-    return self.player;
-}
-
-- (void)play:(YKQualityOptions)quality {
-    if (!self.player) [self movieViewController:quality];
-    
-    [[UIApplication sharedApplication].keyWindow.rootViewController presentMoviePlayerViewControllerAnimated:self.player];
-    [self.player.moviePlayer play];
-}
-
 #pragma mark - Class Methods
 
 + (void)parse:(NSURL *)contentURL completion:(void(^)(YKVideoTypeOptions, id<YKVideo>, NSError *))callback {
@@ -171,10 +153,6 @@ NSString *const kVideoNotSupported = @"Video not supported";
     } else {
         return YKVideoTypeUnknown;
     }
-}
-
-- (UIViewController *)rootViewController {
-    return [UIApplication sharedApplication].keyWindow.rootViewController;
 }
 
 @end

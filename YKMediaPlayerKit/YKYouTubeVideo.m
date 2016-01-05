@@ -8,24 +8,17 @@
 
 #import "YKYouTubeVideo.h"
 #import <HCYoutubeParser/HCYoutubeParser.h>
+#import "YKHelper.h"
 
 @interface YKYouTubeVideo()
-@property (nonatomic, strong) MPMoviePlayerViewController *player;
 @end
 
 @implementation YKYouTubeVideo
 
 #pragma mark - YKVideo Protocol
 
-- (instancetype)initWithContent:(NSURL *)contentURL {
-    self = [super init];
-    if (self) {
-        self.contentURL = contentURL;
-    }
-    return self;
-}
-
-- (void)parseWithCompletion:(void(^)(NSError *error))callback {
+- (void)parseWithCompletion:(void(^)(NSError *error))callback
+{
     NSAssert(self.contentURL, @"Invalid contentURL");
     
     __weak YKYouTubeVideo *weakSelf = self;
@@ -41,7 +34,8 @@
     }];
 }
 
-- (void)thumbImage:(YKQualityOptions)quality completion:(void(^)(UIImage *thumbImage, NSError *error))callback {
+- (void)thumbImage:(YKQualityOptions)quality completion:(void(^)(UIImage *thumbImage, NSError *error))callback
+{
     NSAssert(callback, @"usingBlock cannot be nil");
     
     YouTubeThumbnail youTubeQuality = YouTubeThumbnailDefault;
@@ -64,7 +58,8 @@
     }];
 }
 
-- (NSURL *)videoURL:(YKQualityOptions)quality {
+- (NSURL *)videoURL:(YKQualityOptions)quality
+{
     NSString *strURL = nil;
     
     switch (quality) {
@@ -83,21 +78,6 @@
     }
     
     return strURL ? [NSURL URLWithString:strURL] : nil;
-}
-
-- (MPMoviePlayerViewController *)movieViewController:(YKQualityOptions)quality {
-    self.player = [[MPMoviePlayerViewController alloc] initWithContentURL:[self videoURL:quality]];
-    [self.player.moviePlayer setShouldAutoplay:NO];
-    [self.player.moviePlayer prepareToPlay];
-    
-    return self.player;
-}
-
-- (void)play:(YKQualityOptions)quality {
-    if (!self.player) [self movieViewController:quality];
-    
-    [[UIApplication sharedApplication].keyWindow.rootViewController presentMoviePlayerViewControllerAnimated:self.player];
-    [self.player.moviePlayer play];
 }
 
 @end

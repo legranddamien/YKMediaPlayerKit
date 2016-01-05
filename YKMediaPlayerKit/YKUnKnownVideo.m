@@ -7,6 +7,7 @@
 //
 
 #import "YKUnKnownVideo.h"
+#import "YKHelper.h"
 
 #define kNavBarHeight (([[[UIDevice currentDevice] systemVersion] compare:@"7.0" options:NSNumericSearch] == NSOrderedAscending) ? 44.0f : 64.0f)
 
@@ -22,7 +23,8 @@
 
 #pragma mark - YKVideo Protocol
 
-- (instancetype)initWithContent:(NSURL *)contentURL {
+- (instancetype)initWithContent:(NSURL *)contentURL
+{
     self = [super init];
     if (self) {
         self.contentURL = contentURL;
@@ -30,11 +32,13 @@
     return self;
 }
 
-- (void)parseWithCompletion:(void(^)(NSError *error))callback {
+- (void)parseWithCompletion:(void(^)(NSError *error))callback
+{
     NSAssert(self.contentURL, @"Invalid contentURL");
 }
 
-- (void)thumbImage:(YKQualityOptions)quality completion:(void(^)(UIImage *thumbImage, NSError *error))callback {
+- (void)thumbImage:(YKQualityOptions)quality completion:(void(^)(UIImage *thumbImage, NSError *error))callback
+{
     NSAssert(callback, @"completion block cannot be nil");
     
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -48,11 +52,20 @@
 
 #pragma warning Move to Parent class
 
+_Pragma("clang diagnostic push")
+_Pragma("clang diagnostic ignored \"-Wdeprecated-declarations\"")
 - (MPMoviePlayerViewController *)movieViewController:(YKQualityOptions)quality {
     return nil;
 }
+_Pragma("clang diagnostic pop")
 
-- (void)play:(YKQualityOptions)quality {
+- (AVPlayerViewController *)playerViewController:(YKQualityOptions)quality
+{
+    return nil;
+}
+
+- (void)play:(YKQualityOptions)quality
+{
     UIViewController *rootViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
     CGSize viewSize = rootViewController.view.frame.size;
     
@@ -79,7 +92,8 @@
     [rootViewController presentViewController:self.viewController animated:YES completion:nil];
 }
 
-- (void)dismiss {
+- (void)dismiss
+{
     [self.viewController dismissViewControllerAnimated:YES completion:nil];
 }
 

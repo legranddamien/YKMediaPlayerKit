@@ -7,13 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "YKVideo.h"
+#import "YKMainVideo.h"
 
-@interface YKDirectVideo : NSObject <YKVideo>
-
-/**
- Vimeo video url
- */
-@property (nonatomic, strong) NSURL *contentURL;
+@interface YKDirectVideo : YKMainVideo
 
 @end

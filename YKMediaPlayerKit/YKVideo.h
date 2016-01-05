@@ -9,6 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <MediaPlayer/MediaPlayer.h>
 
+@import AVKit;
+@import AVFoundation.AVPlayer;
+@import AVFoundation.AVPlayerItem;
+@import AVFoundation.AVAssetImageGenerator;
+
 typedef NS_ENUM(NSUInteger, YKQualityOptions) {
     YKQualityLow,
     YKQualityMedium,
@@ -49,6 +54,8 @@ typedef NS_ENUM(NSUInteger, YKQualityOptions) {
 /**
     Instance of player so you could present it modally by yourself or push it to a navigation controller.
  */
-- (MPMoviePlayerViewController *)movieViewController:(YKQualityOptions)quality;
+- (MPMoviePlayerViewController *)movieViewController:(YKQualityOptions)quality __attribute__((deprecated("Replaced by -playerViewController: for iOS8 +")));
+
+- (AVPlayerViewController *)playerViewController:(YKQualityOptions)quality;
                                                        
 @end
