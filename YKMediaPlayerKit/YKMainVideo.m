@@ -9,6 +9,20 @@
 #import "YKMainVideo.h"
 #import "YKHelper.h"
 
+@interface YKVideoAnimator : NSObject <UIViewControllerAnimatedTransitioning>
+
+@property (nonatomic) BOOL reverse;
+
+@end
+
+
+@interface YKMainVideo () <UIViewControllerTransitioningDelegate>
+
+@property (nonatomic, strong) YKVideoAnimator *presentAnimator;
+@property (nonatomic, strong) YKVideoAnimator *dismissAnimator;
+
+@end
+
 @implementation YKMainVideo
 
 - (instancetype)initWithContent:(NSURL *)contentURL {
@@ -89,19 +103,139 @@ _Pragma("clang diagnostic pop")
     
     if(YK_IOS8)
     {
-        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:self.videoPlayer
+        [self presentController:self.videoPlayer completion:^{
+            [self.videoPlayer.player play];
+        }];
+    }
+    else
+    {
+        [self presentController:self.player completion:^{
+            [self.player.moviePlayer play];
+        }];
+    }
+}
+
+- (YKVideoAnimator *)presentAnimator
+{
+    if(_presentAnimator) return _presentAnimator;
+    _presentAnimator = [YKVideoAnimator new];
+    return _presentAnimator;
+}
+
+- (YKVideoAnimator *)dismissAnimator
+{
+    if(_dismissAnimator) return _dismissAnimator;
+    _dismissAnimator = [YKVideoAnimator new];
+    _dismissAnimator.reverse = YES;
+    return _dismissAnimator;
+}
+
+- (void)presentController:(UIViewController *)controller completion:(void (^)(void))completion
+{
+    _Pragma("clang diagnostic push")
+    _Pragma("clang diagnostic ignored \"-Wdeprecated-declarations\"")
+    if(![controller isKindOfClass:[MPMoviePlayerViewController class]])
+    {
+        controller.transitioningDelegate = self;
+        controller.modalPresentationStyle = UIModalPresentationFullScreen;
+        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:controller
                                                                                      animated:YES
                                                                                    completion:^{
-                                                                                       [self.videoPlayer.player play];
+                                                                                       if(completion) completion();
                                                                                    }];
     }
     else
     {
-        _Pragma("clang diagnostic push")
-        _Pragma("clang diagnostic ignored \"-Wdeprecated-declarations\"")
-        [[UIApplication sharedApplication].keyWindow.rootViewController presentMoviePlayerViewControllerAnimated:self.player];
-        [self.player.moviePlayer play];
-        _Pragma("clang diagnostic pop")
+        [[UIApplication sharedApplication].keyWindow.rootViewController presentMoviePlayerViewControllerAnimated:(MPMoviePlayerViewController *)controller];
+        if(completion) completion();
+    }
+    
+    _Pragma("clang diagnostic pop")
+}
+
+#pragma mark - UIViewControllerTransitioningDelegate
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
+                                                                  presentingController:(UIViewController *)presenting
+                                                                      sourceController:(UIViewController *)source
+{
+    return self.presentAnimator;
+}
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
+{
+    return self.dismissAnimator;
+}
+
+
+@end
+
+@implementation YKVideoAnimator
+
+- (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext
+{
+    return 0.3;
+}
+
+- (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
+{
+    UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    
+    if(!self.reverse) //presenting
+    {
+        fromViewController.view.userInteractionEnabled = NO;
+        
+        CGRect frameTo = toViewController.view.frame;
+        frameTo.size = [transitionContext containerView].frame.size;
+        frameTo.origin = CGPointZero;
+        
+        toViewController.view.frame = frameTo;
+        
+        CGRect frameFrom = fromViewController.view.frame;
+        
+        frameFrom.origin.y = 0;
+        fromViewController.view.frame = frameFrom;
+        
+        frameFrom.origin.y = frameFrom.size.height;
+        [[transitionContext containerView] addSubview:toViewController.view];
+        [[transitionContext containerView] addSubview:fromViewController.view];
+        
+        [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            
+            fromViewController.view.frame = frameFrom;
+            
+        } completion:^(BOOL finished) {
+            
+            [transitionContext completeTransition:YES];
+            
+        }];
+
+    }
+    else //dismiss
+    {
+        toViewController.view.userInteractionEnabled = YES;
+        
+        CGRect frameTo = toViewController.view.frame;
+        frameTo.size = [transitionContext containerView].frame.size;
+        frameTo.origin = CGPointMake(0, frameTo.size.height);
+        
+        toViewController.view.frame = frameTo;
+        
+        CGRect frameFrom = fromViewController.view.frame;
+        frameFrom.origin = CGPointZero;
+        fromViewController.view.frame = frameFrom;
+        
+        frameTo.origin.y = 0;
+        
+        [[transitionContext containerView] addSubview:fromViewController.view];
+        [[transitionContext containerView] addSubview:toViewController.view];
+        
+        [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+            toViewController.view.frame = frameTo;
+        } completion:^(BOOL finished) {
+            [transitionContext completeTransition:YES];
+        }];
     }
 }
 

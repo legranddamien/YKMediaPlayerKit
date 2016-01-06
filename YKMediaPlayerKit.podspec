@@ -15,4 +15,6 @@ Pod::Spec.new do |s|
 
   s.dependency 'HCYoutubeParser', '~> 0.0'
   s.dependency 'IGVimeoExtractor', '~> 1.2'
+  s.dependency 'FBSDKCoreKit', '~> 4.8'
+  s.dependency 'FBSDKLoginKit', '~> 4.8'
 end

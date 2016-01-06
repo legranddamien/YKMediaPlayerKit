@@ -14,10 +14,14 @@
 #import "YKVimeoVideo.h"
 #import "YKDirectVideo.h"
 #import "YKUnKnownVideo.h"
+#import "YKDailymotionVideo.h"
+#import "YKFacebookVideo.h"
 
 typedef NS_ENUM(NSUInteger, YKVideoTypeOptions) {
     YKVideoTypeYouTube,
     YKVideoTypeVimeo,
+    YKVideoTypeDailymotion,
+    YKVideoTypeFacebook,
     YKVideoTypeDirect,
     YKVideoTypeUnknown
 };

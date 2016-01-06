@@ -49,6 +49,12 @@ NSString *const kVideoNotSupported = @"Video not supported";
         case YKVideoTypeVimeo:
             self.video = [[YKVimeoVideo alloc] initWithContent:self.contentURL];
             break;
+        case YKVideoTypeDailymotion:
+            self.video = [[YKDailymotionVideo alloc] initWithContent:self.contentURL];
+            break;
+        case YKVideoTypeFacebook:
+            self.video = [[YKFacebookVideo alloc] initWithContent:self.contentURL];
+            break;
         case YKVideoTypeDirect:
             self.video = [[YKDirectVideo alloc] initWithContent:self.contentURL];
             
@@ -150,6 +156,10 @@ NSString *const kVideoNotSupported = @"Video not supported";
         return YKVideoTypeYouTube;
     } else if ([self.contentURL.host.lowercaseString hasSuffix:@"vimeo.com"]) {
         return YKVideoTypeVimeo;
+    } else if ([self.contentURL.host.lowercaseString hasSuffix:@"dailymotion.com"]) {
+        return YKVideoTypeDailymotion;
+    } else if ([self.contentURL.host.lowercaseString hasSuffix:@"facebook.com"]) {
+        return YKVideoTypeFacebook;
     } else {
         return YKVideoTypeUnknown;
     }
