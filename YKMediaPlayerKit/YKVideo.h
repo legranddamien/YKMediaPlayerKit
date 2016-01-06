@@ -51,6 +51,11 @@ typedef NS_ENUM(NSUInteger, YKQualityOptions) {
  */
 - (void)play:(YKQualityOptions)quality;
 
+/**
+ Plays video for a given quality in a modal window
+ */
+- (void)play:(YKQualityOptions)quality fromSourceController:(UIViewController *)sourceController;
+
 @optional
 
 /**

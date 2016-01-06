@@ -40,4 +40,9 @@
     [self presentController:[YKWebViewController modalWithURL:[self videoURL:YKQualityHigh]] completion:nil];
 }
 
+- (void)play:(YKQualityOptions)quality fromSourceController:(UIViewController *)sourceController
+{
+    [self presentController:[YKWebViewController modalWithURL:[self videoURL:YKQualityHigh]] sourceController:sourceController completion:nil];
+}
+
 @end

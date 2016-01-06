@@ -120,6 +120,24 @@ _Pragma("clang diagnostic pop")
     }
 }
 
+- (void)play:(YKQualityOptions)quality fromSourceController:(UIViewController *)sourceController
+{
+    [self buildPlayerWithQuality:quality];
+    
+    if(YK_IOS8)
+    {
+        [self presentController:self.videoPlayer sourceController:sourceController completion:^{
+            [self.videoPlayer.player play];
+        }];
+    }
+    else
+    {
+        [self presentController:self.player sourceController:sourceController completion:^{
+            [self.player.moviePlayer play];
+        }];
+    }
+}
+
 - (YKVideoAnimator *)presentAnimator
 {
     if(_presentAnimator) return _presentAnimator;
@@ -137,21 +155,26 @@ _Pragma("clang diagnostic pop")
 
 - (void)presentController:(UIViewController *)controller completion:(void (^)(void))completion
 {
+    [self presentController:controller sourceController:[[UIApplication sharedApplication].keyWindow rootViewController] completion:completion];
+}
+
+- (void)presentController:(UIViewController *)controller sourceController:(UIViewController *)sourceController completion:(void (^)(void))completion
+{
     _Pragma("clang diagnostic push")
     _Pragma("clang diagnostic ignored \"-Wdeprecated-declarations\"")
     if(![controller isKindOfClass:[MPMoviePlayerViewController class]])
     {
         controller.transitioningDelegate = self;
         controller.modalPresentationStyle = UIModalPresentationFullScreen;
-        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:controller
-                                                                                     animated:YES
-                                                                                   completion:^{
-                                                                                       if(completion) completion();
-                                                                                   }];
+        [sourceController presentViewController:controller
+                                       animated:YES
+                                     completion:^{
+                                         if(completion) completion();
+                                     }];
     }
     else
     {
-        [[UIApplication sharedApplication].keyWindow.rootViewController presentMoviePlayerViewControllerAnimated:(MPMoviePlayerViewController *)controller];
+        [sourceController presentMoviePlayerViewControllerAnimated:(MPMoviePlayerViewController *)controller];
         if(completion) completion();
     }
     

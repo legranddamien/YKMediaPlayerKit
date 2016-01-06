@@ -24,5 +24,6 @@ _Pragma("clang diagnostic pop")
 - (void)buildPlayerWithQuality:(YKQualityOptions)quality;
 
 - (void)presentController:(UIViewController *)controller completion:(void (^)(void))completion;
+- (void)presentController:(UIViewController *)controller sourceController:(UIViewController *)sourceController completion:(void (^)(void))completion;
 
 @end
