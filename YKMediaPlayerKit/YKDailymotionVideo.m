@@ -19,6 +19,16 @@
 
 @implementation YKDailymotionVideo
 
+- (NSString *)title
+{
+    if(_data && _data[@"title"])
+    {
+        return _data[@"title"];
+    }
+    
+    return nil;
+}
+
 - (void)parseWithCompletion:(void(^)(NSError *error))callback
 {
     NSAssert(self.contentURL, @"Invalid contentURL");
@@ -35,7 +45,7 @@
     NSString *identifier = exploded[0];
 
     
-    NSString *apiURL = [NSString stringWithFormat:@"https://api.dailymotion.com/video/%@?fields=embed_url,thumbnail_360_url,thumbnail_480_url,thumbnail_720_url", identifier];
+    NSString *apiURL = [NSString stringWithFormat:@"https://api.dailymotion.com/video/%@?fields=embed_url,thumbnail_360_url,thumbnail_480_url,thumbnail_720_url,title", identifier];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     NSURLSessionDataTask *task = [session dataTaskWithURL:[NSURL URLWithString:apiURL] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         

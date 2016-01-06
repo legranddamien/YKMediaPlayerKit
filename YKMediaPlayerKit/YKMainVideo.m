@@ -33,6 +33,11 @@
     return self;
 }
 
+- (NSString *)title
+{
+    return nil;
+}
+
 - (NSURL *)videoURL:(YKQualityOptions)quality
 {
     NSAssert(false, @"Override this method !");

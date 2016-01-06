@@ -24,6 +24,8 @@ typedef NS_ENUM(NSUInteger, YKQualityOptions) {
 
 @required
 
+- (NSString *)title;
+
 /**
     This is a blocking call, wont return till video info has been parsed. To avoid blocking behavor, use init and call parseURL to parse video url
  */

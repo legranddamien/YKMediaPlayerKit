@@ -21,11 +21,18 @@
 @property (nonatomic, strong) NSString *embed;
 @property (nonatomic, strong) NSString *identifier;
 
+@property (nonatomic, strong) NSString *desc;
+
 @property (nonatomic) BOOL parsed;
 
 @end
 
 @implementation YKFacebookVideo
+
+- (NSString *)title
+{
+    return _desc;
+}
 
 - (void)parseWithCompletion:(void(^)(NSError *error))callback
 {
@@ -61,7 +68,7 @@
     
     FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]
                                   initWithGraphPath:[NSString stringWithFormat:@"/%@", identifier]
-                                  parameters:@{ @"fields": @"thumbnails,embed_html",}
+                                  parameters:@{ @"fields": @"thumbnails,embed_html,description",}
                                   HTTPMethod:@"GET"];
     
     [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
@@ -73,6 +80,7 @@
         }
         
         _embed = result[@"embed_html"];
+        _desc = result[@"description"];
         
         NSArray *data = result[@"thumbnails"][@"data"];
         
@@ -97,8 +105,6 @@
                 }
             }
         }
-        
-        
         
         if(callback) callback(nil);
     }];

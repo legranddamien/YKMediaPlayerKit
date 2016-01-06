@@ -12,11 +12,17 @@
 
 @interface YKVimeoVideo()
 @property (nonatomic, strong) NSString *videoID;
+@property (nonatomic, strong) NSString *desc;
 @end
 
 @implementation YKVimeoVideo
 
 #pragma mark - YKVideo Protocol
+
+- (NSString *)title
+{
+    return _desc;
+}
 
 - (void)parseWithCompletion:(void(^)(NSError *))callback {
     NSAssert(self.contentURL, @"Invalid contentURL");
@@ -39,6 +45,7 @@
 
         self.videos = [[self class] videosDictionary:videos];
         self.thumbs = [[self class] thumbsDictionary:videos];
+        self.desc = [[self class] videosTitle:videos];
         
         if (callback) {
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -47,6 +54,20 @@
         }        
     }];
 
+}
+
++ (NSString *)videosTitle:(NSArray<IGVimeoVideo*>*)videos {
+    
+    for(IGVimeoVideo* video in videos) {
+        
+        if(video.title)
+        {
+            return video.title;
+        }
+    }
+    
+    return nil;
+    
 }
 
 + (NSDictionary*)videosDictionary:(NSArray<IGVimeoVideo*>*) videos {

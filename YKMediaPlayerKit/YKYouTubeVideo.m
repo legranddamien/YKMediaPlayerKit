@@ -17,6 +17,15 @@
 
 #pragma mark - YKVideo Protocol
 
+- (NSString *)title
+{
+    if(self.videos && self.videos[@"moreInfo"] && self.videos[@"moreInfo"][@"title"])
+    {
+        return self.videos[@"moreInfo"][@"title"];
+    }
+    return nil;
+}
+
 - (void)parseWithCompletion:(void(^)(NSError *error))callback
 {
     NSAssert(self.contentURL, @"Invalid contentURL");
