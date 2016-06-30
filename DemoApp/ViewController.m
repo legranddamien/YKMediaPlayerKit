@@ -13,6 +13,8 @@
 #import "YKYouTubeVideo.h"
 #import "YKDirectVideo.h"
 
+//Youtube Vimeo MP4 MOV Unknown
+
 NSString *const kYouTubeVideo = @"http://www.youtube.com/watch?v=1hZ98an9wjo";
 NSString *const kVimeoVideo = @"http://vimeo.com/42893621";
 NSString *const kDirectVideo = @"http://download.wavetlan.com/SVV/Media/HTTP/H264/Talkinghead_Media/H264_test1_Talkinghead_mp4_480x360.mp4";

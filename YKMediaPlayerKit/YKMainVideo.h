@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "YKVideo.h"
+#import "YKAVPlayerViewController.h"
 
 @interface YKMainVideo : NSObject <YKVideo>
 
@@ -18,7 +19,7 @@ _Pragma("clang diagnostic ignored \"-Wdeprecated-declarations\"")
 @property (nonatomic, strong) MPMoviePlayerViewController *player;
 _Pragma("clang diagnostic pop")
 
-@property (nonatomic, strong) AVPlayerViewController *videoPlayer;
+@property (nonatomic, strong) YKAVPlayerViewController *videoPlayer;
 @property (nonatomic) YKQualityOptions currentQuality;
 
 - (void)buildPlayerWithQuality:(YKQualityOptions)quality;

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,106 +18,221 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="YouTube Video" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9T-kI-26f">
-                                <rect key="frame" x="20" y="30" width="114" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vimeo Video" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ctq-Y0-Lft">
-                                <rect key="frame" x="179" y="30" width="96" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MP4 Video" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OnW-XY-Dpy">
-                                <rect key="frame" x="20" y="210" width="83.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MOV Video" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQg-kt-Ugs">
-                                <rect key="frame" x="179" y="210" width="86.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NLM-PQ-Qgd">
-                                <rect key="frame" x="20" y="54" width="121" height="121"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="euK-9J-eGN">
-                                <rect key="frame" x="179" y="54" width="121" height="121"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zgk-ng-LBt">
-                                <rect key="frame" x="20" y="234" width="121" height="121"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="drb-V8-1SE">
-                                <rect key="frame" x="179" y="234" width="121" height="121"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geO-Kn-8F5">
-                                <rect key="frame" x="20" y="173" width="121" height="30"/>
-                                <state key="normal" title="Play YouTube">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="youTubeButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ASB-Rt-SqS"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zuf-T2-tfK">
-                                <rect key="frame" x="179" y="173" width="121" height="30"/>
-                                <state key="normal" title="Play Vimeo">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="vimeoButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="cRg-aV-fAz"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T0u-Ud-4ss">
-                                <rect key="frame" x="20" y="353" width="121" height="30"/>
-                                <state key="normal" title="Play Direct URL">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="mp4ButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dLH-gU-2SA"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QkF-IZ-vgu">
-                                <rect key="frame" x="179" y="353" width="121" height="30"/>
-                                <state key="normal" title="Play Direct URL">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="otherButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="tYw-dQ-lQe"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Unknown Video" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7a-4x-d2j">
-                                <rect key="frame" x="20" y="386" width="129" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tdE-AF-g8R">
-                                <rect key="frame" x="20" y="410" width="121" height="121"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MI7-7R-aTk" userLabel="Button - Play Unknown URL">
-                                <rect key="frame" x="20" y="530" width="135" height="30"/>
-                                <state key="normal" title="Play UnKnown URL">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="unknownButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="tTc-JJ-VRt"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ki-ma-IKV">
+                                <rect key="frame" x="20" y="20" width="130" height="131"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YouTube Video" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9T-kI-26f">
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NLM-PQ-Qgd">
+                                        <rect key="frame" x="25" y="20.5" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="b8S-df-fCs"/>
+                                            <constraint firstAttribute="height" constant="80" id="x4y-UV-F2U"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geO-Kn-8F5">
+                                        <rect key="frame" x="0.0" y="100.5" width="130" height="30"/>
+                                        <state key="normal" title="Play YouTube">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="youTubeButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ASB-Rt-SqS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="NLM-PQ-Qgd" firstAttribute="centerX" secondItem="5Ki-ma-IKV" secondAttribute="centerX" id="06d-7d-R3R"/>
+                                    <constraint firstItem="h9T-kI-26f" firstAttribute="leading" secondItem="5Ki-ma-IKV" secondAttribute="leading" id="0qg-ZZ-bMk"/>
+                                    <constraint firstItem="geO-Kn-8F5" firstAttribute="top" secondItem="NLM-PQ-Qgd" secondAttribute="bottom" id="3bi-O2-pW9"/>
+                                    <constraint firstItem="geO-Kn-8F5" firstAttribute="leading" secondItem="5Ki-ma-IKV" secondAttribute="leading" id="5q9-Vw-F1g"/>
+                                    <constraint firstAttribute="trailing" secondItem="geO-Kn-8F5" secondAttribute="trailing" id="DFD-SZ-lNM"/>
+                                    <constraint firstItem="NLM-PQ-Qgd" firstAttribute="top" secondItem="h9T-kI-26f" secondAttribute="bottom" id="Ndh-1H-aPF"/>
+                                    <constraint firstAttribute="bottom" secondItem="geO-Kn-8F5" secondAttribute="bottom" id="Vx1-Wp-QEu"/>
+                                    <constraint firstItem="h9T-kI-26f" firstAttribute="top" secondItem="5Ki-ma-IKV" secondAttribute="top" id="YeG-XA-BC7"/>
+                                    <constraint firstAttribute="trailing" secondItem="h9T-kI-26f" secondAttribute="trailing" id="ebE-G4-PBr"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NyS-9b-9se">
+                                <rect key="frame" x="170" y="20" width="130" height="131"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vimeo Video" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sXI-kF-gMi">
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHx-fj-t8B">
+                                        <rect key="frame" x="0.0" y="101" width="130" height="30"/>
+                                        <state key="normal" title="Play Vimeo">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="youTubeButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="3IG-DA-2e1"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FSx-4k-ibd">
+                                        <rect key="frame" x="25" y="21" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="2Ha-zY-0Mn"/>
+                                            <constraint firstAttribute="height" constant="80" id="aZC-If-xvS"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="sXI-kF-gMi" secondAttribute="trailing" id="4Iy-Q0-apL"/>
+                                    <constraint firstItem="FSx-4k-ibd" firstAttribute="centerX" secondItem="NyS-9b-9se" secondAttribute="centerX" id="6EQ-Aw-YwN"/>
+                                    <constraint firstAttribute="bottom" secondItem="bHx-fj-t8B" secondAttribute="bottom" id="C8T-H6-NBe"/>
+                                    <constraint firstItem="sXI-kF-gMi" firstAttribute="top" secondItem="NyS-9b-9se" secondAttribute="top" id="IRe-L3-yo9"/>
+                                    <constraint firstItem="bHx-fj-t8B" firstAttribute="leading" secondItem="NyS-9b-9se" secondAttribute="leading" id="SHN-tp-f03"/>
+                                    <constraint firstItem="FSx-4k-ibd" firstAttribute="top" secondItem="sXI-kF-gMi" secondAttribute="bottom" id="X53-DU-wRc"/>
+                                    <constraint firstItem="bHx-fj-t8B" firstAttribute="top" secondItem="FSx-4k-ibd" secondAttribute="bottom" id="aCq-dS-xmI"/>
+                                    <constraint firstAttribute="trailing" secondItem="bHx-fj-t8B" secondAttribute="trailing" id="dat-6B-3p3"/>
+                                    <constraint firstItem="sXI-kF-gMi" firstAttribute="leading" secondItem="NyS-9b-9se" secondAttribute="leading" id="nBC-gF-c7V"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Il-v6-goJ">
+                                <rect key="frame" x="20" y="171" width="130" height="131"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MP4 Video" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jqd-4L-syF">
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9za-62-dB3">
+                                        <rect key="frame" x="25" y="21" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="UdO-Ma-fZQ"/>
+                                            <constraint firstAttribute="width" constant="80" id="YO5-AV-CTC"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IL3-wL-1tH">
+                                        <rect key="frame" x="0.0" y="101" width="130" height="30"/>
+                                        <state key="normal" title="Play MP4">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="youTubeButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="O4V-gN-AGA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Jqd-4L-syF" firstAttribute="leading" secondItem="8Il-v6-goJ" secondAttribute="leading" id="0dz-IM-G4a"/>
+                                    <constraint firstAttribute="bottom" secondItem="IL3-wL-1tH" secondAttribute="bottom" id="Ei4-Hh-WFN"/>
+                                    <constraint firstAttribute="trailing" secondItem="IL3-wL-1tH" secondAttribute="trailing" id="Eyj-nj-1oR"/>
+                                    <constraint firstAttribute="trailing" secondItem="Jqd-4L-syF" secondAttribute="trailing" id="GGq-6p-Mk9"/>
+                                    <constraint firstItem="IL3-wL-1tH" firstAttribute="leading" secondItem="8Il-v6-goJ" secondAttribute="leading" id="R7h-kJ-f89"/>
+                                    <constraint firstItem="9za-62-dB3" firstAttribute="top" secondItem="Jqd-4L-syF" secondAttribute="bottom" id="ffo-G1-c1u"/>
+                                    <constraint firstItem="IL3-wL-1tH" firstAttribute="top" secondItem="9za-62-dB3" secondAttribute="bottom" id="p2d-CN-ndu"/>
+                                    <constraint firstItem="Jqd-4L-syF" firstAttribute="top" secondItem="8Il-v6-goJ" secondAttribute="top" id="stq-0H-yRT"/>
+                                    <constraint firstItem="9za-62-dB3" firstAttribute="centerX" secondItem="8Il-v6-goJ" secondAttribute="centerX" id="tGs-2x-buc"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="87A-Ra-7cX">
+                                <rect key="frame" x="170" y="171" width="130" height="130"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOV Video" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="am1-1u-YPd">
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zWJ-ue-MKa">
+                                        <rect key="frame" x="25" y="21" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="B26-jw-AJe"/>
+                                            <constraint firstAttribute="height" constant="80" id="wW4-US-HOG"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7tA-sQ-JnV">
+                                        <rect key="frame" x="0.0" y="101" width="130" height="30"/>
+                                        <state key="normal" title="Play MOV">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="youTubeButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Igz-ou-afl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="am1-1u-YPd" firstAttribute="top" secondItem="87A-Ra-7cX" secondAttribute="top" id="Ahf-ds-OSs"/>
+                                    <constraint firstItem="zWJ-ue-MKa" firstAttribute="top" secondItem="am1-1u-YPd" secondAttribute="bottom" id="COT-Vj-VKZ"/>
+                                    <constraint firstItem="zWJ-ue-MKa" firstAttribute="centerX" secondItem="87A-Ra-7cX" secondAttribute="centerX" id="EjP-7Y-Mxj"/>
+                                    <constraint firstAttribute="trailing" secondItem="am1-1u-YPd" secondAttribute="trailing" id="YcR-MI-Two"/>
+                                    <constraint firstAttribute="bottom" secondItem="7tA-sQ-JnV" secondAttribute="bottom" id="cEl-qW-A7V"/>
+                                    <constraint firstAttribute="trailing" secondItem="7tA-sQ-JnV" secondAttribute="trailing" id="d40-Ps-fVX"/>
+                                    <constraint firstItem="7tA-sQ-JnV" firstAttribute="leading" secondItem="87A-Ra-7cX" secondAttribute="leading" id="gkK-zh-C7b"/>
+                                    <constraint firstItem="am1-1u-YPd" firstAttribute="leading" secondItem="87A-Ra-7cX" secondAttribute="leading" id="oo6-O4-7Se"/>
+                                    <constraint firstItem="7tA-sQ-JnV" firstAttribute="top" secondItem="zWJ-ue-MKa" secondAttribute="bottom" id="otD-eO-Rmu"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3bo-b1-705">
+                                <rect key="frame" x="20" y="322" width="121" height="130"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unknown Video" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDR-rn-VIF">
+                                        <rect key="frame" x="0.0" y="0.0" width="121" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aKF-ep-AcF">
+                                        <rect key="frame" x="21" y="21" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="FxA-9N-ax0"/>
+                                            <constraint firstAttribute="width" constant="80" id="v09-zr-eFv"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YvO-he-fXq">
+                                        <rect key="frame" x="0.0" y="101" width="121" height="30"/>
+                                        <state key="normal" title="Play Unknown">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="youTubeButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="t06-NK-fvQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="GDR-rn-VIF" firstAttribute="top" secondItem="3bo-b1-705" secondAttribute="top" id="Aci-rn-JgK"/>
+                                    <constraint firstItem="aKF-ep-AcF" firstAttribute="top" secondItem="GDR-rn-VIF" secondAttribute="bottom" id="BzL-n6-arw"/>
+                                    <constraint firstItem="YvO-he-fXq" firstAttribute="top" secondItem="aKF-ep-AcF" secondAttribute="bottom" id="Chy-uA-nAB"/>
+                                    <constraint firstItem="GDR-rn-VIF" firstAttribute="leading" secondItem="3bo-b1-705" secondAttribute="leading" id="Ejh-XW-twG"/>
+                                    <constraint firstAttribute="trailing" secondItem="GDR-rn-VIF" secondAttribute="trailing" id="HSZ-0h-TOr"/>
+                                    <constraint firstAttribute="bottom" secondItem="YvO-he-fXq" secondAttribute="bottom" id="NWW-CB-iGf"/>
+                                    <constraint firstItem="aKF-ep-AcF" firstAttribute="centerX" secondItem="3bo-b1-705" secondAttribute="centerX" id="OJb-Tm-LBH"/>
+                                    <constraint firstItem="YvO-he-fXq" firstAttribute="leading" secondItem="3bo-b1-705" secondAttribute="leading" id="Qhz-vv-oBn"/>
+                                    <constraint firstAttribute="trailing" secondItem="YvO-he-fXq" secondAttribute="trailing" id="RA0-3R-8wu"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8Il-v6-goJ" firstAttribute="top" secondItem="5Ki-ma-IKV" secondAttribute="bottom" constant="20" id="4wW-uD-0FL"/>
+                            <constraint firstItem="5Ki-ma-IKV" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="5eK-AY-3do"/>
+                            <constraint firstItem="3bo-b1-705" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="9xb-DB-sra"/>
+                            <constraint firstItem="NyS-9b-9se" firstAttribute="leading" secondItem="5Ki-ma-IKV" secondAttribute="trailing" constant="20" id="CDA-6P-hBf"/>
+                            <constraint firstItem="87A-Ra-7cX" firstAttribute="leading" secondItem="8Il-v6-goJ" secondAttribute="trailing" constant="20" id="D4c-l8-Lct"/>
+                            <constraint firstAttribute="trailing" secondItem="NyS-9b-9se" secondAttribute="trailing" constant="20" id="IEQ-0u-nPG"/>
+                            <constraint firstItem="87A-Ra-7cX" firstAttribute="top" secondItem="NyS-9b-9se" secondAttribute="bottom" constant="20" id="Llm-au-0jK"/>
+                            <constraint firstItem="5Ki-ma-IKV" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="20" id="Msg-Kk-YUo"/>
+                            <constraint firstItem="87A-Ra-7cX" firstAttribute="width" secondItem="8Il-v6-goJ" secondAttribute="width" id="NWa-3e-sdr"/>
+                            <constraint firstItem="NyS-9b-9se" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="20" id="PRJ-ce-xDW"/>
+                            <constraint firstItem="8Il-v6-goJ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="e60-he-SlE"/>
+                            <constraint firstAttribute="trailing" secondItem="87A-Ra-7cX" secondAttribute="trailing" constant="20" id="hyh-UV-orn"/>
+                            <constraint firstItem="3bo-b1-705" firstAttribute="top" secondItem="8Il-v6-goJ" secondAttribute="bottom" constant="20" id="lae-Tv-5vt"/>
+                            <constraint firstItem="NyS-9b-9se" firstAttribute="width" secondItem="5Ki-ma-IKV" secondAttribute="width" id="lcl-TB-4IP"/>
+                        </constraints>
                     </view>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="568"/>
                     <connections>
-                        <outlet property="mp4View" destination="Zgk-ng-LBt" id="5gd-DO-6Ad"/>
-                        <outlet property="otherVideoView" destination="drb-V8-1SE" id="LkI-MJ-Qdm"/>
-                        <outlet property="unknownVideoView" destination="tdE-AF-g8R" id="xHp-nw-B3e"/>
-                        <outlet property="vimeoView" destination="euK-9J-eGN" id="iex-wA-cCP"/>
                         <outlet property="youTubeView" destination="NLM-PQ-Qgd" id="DYt-nv-jBD"/>
                     </connections>
                 </viewController>
@@ -124,9 +241,4 @@
             <point key="canvasLocation" x="-286" y="257"/>
         </scene>
     </scenes>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>

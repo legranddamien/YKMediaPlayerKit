@@ -69,7 +69,7 @@
         AVPlayerItem *item = [[AVPlayerItem alloc] initWithURL:[self videoURL:quality]];
         AVPlayer *player = [[AVPlayer alloc] initWithPlayerItem:item];
         
-        self.videoPlayer = [[AVPlayerViewController alloc] init];
+        self.videoPlayer = [[YKAVPlayerViewController alloc] init];
         self.videoPlayer.player = player;
     }
     else
