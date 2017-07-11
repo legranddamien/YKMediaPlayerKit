@@ -7,7 +7,7 @@
 //
 
 #import "YKYouTubeVideo.h"
-#import <HCYoutubeParser/HCYoutubeParser.h>
+#import "HCYoutubeParser.h"
 #import "YKHelper.h"
 
 @interface YKYouTubeVideo()

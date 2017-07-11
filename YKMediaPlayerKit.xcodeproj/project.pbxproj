@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0491177EA811DC89C93204B0 /* libPods-DemoApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F36AD1320ADD88D93BBB69C /* libPods-DemoApp.a */; };
 		2B087EB918CB033900D31A86 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B087E7F18CB01D000D31A86 /* Foundation.framework */; };
 		2B087EBA18CB033900D31A86 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B087E8118CB01D000D31A86 /* CoreGraphics.framework */; };
 		2B087EBB18CB033900D31A86 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B087E8318CB01D000D31A86 /* UIKit.framework */; };
@@ -26,9 +27,13 @@
 		2B8EAB6F18D25EF600F21000 /* YKVimeoVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8EAB6718D25EF600F21000 /* YKVimeoVideo.m */; };
 		2B8EAB7018D25EF600F21000 /* YKYouTubeVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8EAB6918D25EF600F21000 /* YKYouTubeVideo.m */; };
 		2B9896B7197BA3000075AD44 /* YKUnKnownVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9896B6197BA3000075AD44 /* YKUnKnownVideo.m */; };
+		6DC1AE8C1F150FFD00F749C0 /* HCYoutubeParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC1AE8B1F150FFD00F749C0 /* HCYoutubeParser.m */; };
+		6DC1AE8F1F1512EE00F749C0 /* YKAVPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC1AE8E1F1512EE00F749C0 /* YKAVPlayerViewController.m */; };
+		6DC1AE921F15130300F749C0 /* YKFacebookVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC1AE911F15130300F749C0 /* YKFacebookVideo.m */; };
+		6DC1AE951F15130F00F749C0 /* YKDailymotionVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC1AE941F15130F00F749C0 /* YKDailymotionVideo.m */; };
+		6DC1AE981F15131900F749C0 /* YKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC1AE971F15131900F749C0 /* YKWebViewController.m */; };
 		A44DECD41C3BE9BE007C00B5 /* YKMainVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = A44DECD21C3BE9BE007C00B5 /* YKMainVideo.m */; };
 		A44DECD61C3BEC7E007C00B5 /* Launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = A44DECD51C3BEC7E007C00B5 /* Launch.xib */; };
-		E845457CD729D432820A29C4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87709448A3E8D84DDC17FF3B /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,13 +77,23 @@
 		2B8EAB6918D25EF600F21000 /* YKYouTubeVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKYouTubeVideo.m; sourceTree = "<group>"; };
 		2B9896B5197BA3000075AD44 /* YKUnKnownVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKUnKnownVideo.h; sourceTree = "<group>"; };
 		2B9896B6197BA3000075AD44 /* YKUnKnownVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKUnKnownVideo.m; sourceTree = "<group>"; };
-		5581D3BD1A5E7572BC294C2C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		87709448A3E8D84DDC17FF3B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DC1AE8A1F150FFD00F749C0 /* HCYoutubeParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCYoutubeParser.h; sourceTree = "<group>"; };
+		6DC1AE8B1F150FFD00F749C0 /* HCYoutubeParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCYoutubeParser.m; sourceTree = "<group>"; };
+		6DC1AE8D1F1512EE00F749C0 /* YKAVPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKAVPlayerViewController.h; sourceTree = "<group>"; };
+		6DC1AE8E1F1512EE00F749C0 /* YKAVPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKAVPlayerViewController.m; sourceTree = "<group>"; };
+		6DC1AE901F15130300F749C0 /* YKFacebookVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKFacebookVideo.h; sourceTree = "<group>"; };
+		6DC1AE911F15130300F749C0 /* YKFacebookVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKFacebookVideo.m; sourceTree = "<group>"; };
+		6DC1AE931F15130F00F749C0 /* YKDailymotionVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKDailymotionVideo.h; sourceTree = "<group>"; };
+		6DC1AE941F15130F00F749C0 /* YKDailymotionVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKDailymotionVideo.m; sourceTree = "<group>"; };
+		6DC1AE961F15131900F749C0 /* YKWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKWebViewController.h; sourceTree = "<group>"; };
+		6DC1AE971F15131900F749C0 /* YKWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKWebViewController.m; sourceTree = "<group>"; };
+		8F36AD1320ADD88D93BBB69C /* libPods-DemoApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DemoApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A44DECD11C3BE9BE007C00B5 /* YKMainVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKMainVideo.h; sourceTree = "<group>"; };
 		A44DECD21C3BE9BE007C00B5 /* YKMainVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKMainVideo.m; sourceTree = "<group>"; };
 		A44DECD31C3BE9BE007C00B5 /* YKVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKVideo.h; sourceTree = "<group>"; };
 		A44DECD51C3BEC7E007C00B5 /* Launch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Launch.xib; sourceTree = "<group>"; };
-		E72B093F742FE469BBF95909 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		B99AF2381E2473B34D177E3F /* Pods-DemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DemoApp/Pods-DemoApp.debug.xcconfig"; sourceTree = "<group>"; };
+		DC9E6731AC029F2248E7F7AC /* Pods-DemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-DemoApp/Pods-DemoApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +104,7 @@
 				2B087EBA18CB033900D31A86 /* CoreGraphics.framework in Frameworks */,
 				2B087EBB18CB033900D31A86 /* UIKit.framework in Frameworks */,
 				2B087EB918CB033900D31A86 /* Foundation.framework in Frameworks */,
-				E845457CD729D432820A29C4 /* libPods.a in Frameworks */,
+				0491177EA811DC89C93204B0 /* libPods-DemoApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,7 +129,7 @@
 				2B087EDA18CB033900D31A86 /* DemoAppTests */,
 				2B087E7E18CB01D000D31A86 /* Frameworks */,
 				2B087E7D18CB01D000D31A86 /* Products */,
-				2E2FB6B49331809F395C5A19 /* Pods */,
+				F56D931027ADE912B6562C60 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,7 +149,7 @@
 				2B087E8118CB01D000D31A86 /* CoreGraphics.framework */,
 				2B087E8318CB01D000D31A86 /* UIKit.framework */,
 				2B087E9E18CB01D100D31A86 /* XCTest.framework */,
-				87709448A3E8D84DDC17FF3B /* libPods.a */,
+				8F36AD1320ADD88D93BBB69C /* libPods-DemoApp.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -186,6 +201,10 @@
 		2B8EAB5A18D25EF600F21000 /* YKMediaPlayerKit */ = {
 			isa = PBXGroup;
 			children = (
+				6DC1AE8D1F1512EE00F749C0 /* YKAVPlayerViewController.h */,
+				6DC1AE8E1F1512EE00F749C0 /* YKAVPlayerViewController.m */,
+				6DC1AE8A1F150FFD00F749C0 /* HCYoutubeParser.h */,
+				6DC1AE8B1F150FFD00F749C0 /* HCYoutubeParser.m */,
 				A44DECD11C3BE9BE007C00B5 /* YKMainVideo.h */,
 				A44DECD21C3BE9BE007C00B5 /* YKMainVideo.m */,
 				A44DECD31C3BE9BE007C00B5 /* YKVideo.h */,
@@ -198,17 +217,23 @@
 				2B8EAB6918D25EF600F21000 /* YKYouTubeVideo.m */,
 				2B8EAB6118D25EF600F21000 /* YKDirectVideo.h */,
 				2B8EAB6218D25EF600F21000 /* YKDirectVideo.m */,
+				6DC1AE931F15130F00F749C0 /* YKDailymotionVideo.h */,
+				6DC1AE941F15130F00F749C0 /* YKDailymotionVideo.m */,
+				6DC1AE901F15130300F749C0 /* YKFacebookVideo.h */,
+				6DC1AE911F15130300F749C0 /* YKFacebookVideo.m */,
 				2B9896B5197BA3000075AD44 /* YKUnKnownVideo.h */,
 				2B9896B6197BA3000075AD44 /* YKUnKnownVideo.m */,
+				6DC1AE961F15131900F749C0 /* YKWebViewController.h */,
+				6DC1AE971F15131900F749C0 /* YKWebViewController.m */,
 			);
 			path = YKMediaPlayerKit;
 			sourceTree = "<group>";
 		};
-		2E2FB6B49331809F395C5A19 /* Pods */ = {
+		F56D931027ADE912B6562C60 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5581D3BD1A5E7572BC294C2C /* Pods.debug.xcconfig */,
-				E72B093F742FE469BBF95909 /* Pods.release.xcconfig */,
+				B99AF2381E2473B34D177E3F /* Pods-DemoApp.debug.xcconfig */,
+				DC9E6731AC029F2248E7F7AC /* Pods-DemoApp.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -220,12 +245,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2B087EE218CB033900D31A86 /* Build configuration list for PBXNativeTarget "DemoApp" */;
 			buildPhases = (
-				06CEEF68677911B905C89096 /* Check Pods Manifest.lock */,
+				6D9A8FCAAC6A7CC225C73823 /* [CP] Check Pods Manifest.lock */,
 				2B087EB418CB033900D31A86 /* Sources */,
 				2B087EB518CB033900D31A86 /* Frameworks */,
 				2B087EB618CB033900D31A86 /* Resources */,
-				2537AFC43F5AA3C517532A21 /* Copy Pods Resources */,
-				7544B72D29326E6DF6171EAA /* Embed Pods Frameworks */,
+				82EB6A9E2A8372F201382492 /* [CP] Embed Pods Frameworks */,
+				B4AD7D8371F45D79999BA995 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -263,8 +288,11 @@
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Yas Kuraishi";
 				TargetAttributes = {
+					2B087EB718CB033900D31A86 = {
+						DevelopmentTeam = B7Q7CD6V8U;
+					};
 					2B087ED318CB033900D31A86 = {
-						TestTargetID = 2B087E7B18CB01D000D31A86;
+						TestTargetID = 2B087EB718CB033900D31A86;
 					};
 				};
 			};
@@ -310,49 +338,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		06CEEF68677911B905C89096 /* Check Pods Manifest.lock */ = {
+		6D9A8FCAAC6A7CC225C73823 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		2537AFC43F5AA3C517532A21 /* Copy Pods Resources */ = {
+		82EB6A9E2A8372F201382492 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DemoApp/Pods-DemoApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7544B72D29326E6DF6171EAA /* Embed Pods Frameworks */ = {
+		B4AD7D8371F45D79999BA995 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DemoApp/Pods-DemoApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -364,10 +392,15 @@
 			files = (
 				2B8EAB6F18D25EF600F21000 /* YKVimeoVideo.m in Sources */,
 				2B9896B7197BA3000075AD44 /* YKUnKnownVideo.m in Sources */,
+				6DC1AE8F1F1512EE00F749C0 /* YKAVPlayerViewController.m in Sources */,
 				2B087ECD18CB033900D31A86 /* ViewController.m in Sources */,
+				6DC1AE8C1F150FFD00F749C0 /* HCYoutubeParser.m in Sources */,
+				6DC1AE921F15130300F749C0 /* YKFacebookVideo.m in Sources */,
 				2B8EAB7018D25EF600F21000 /* YKYouTubeVideo.m in Sources */,
+				6DC1AE981F15131900F749C0 /* YKWebViewController.m in Sources */,
 				2B8EAB6E18D25EF600F21000 /* YKMediaPlayerKit.m in Sources */,
 				2B087EC718CB033900D31A86 /* AppDelegate.m in Sources */,
+				6DC1AE951F15130F00F749C0 /* YKDailymotionVideo.m in Sources */,
 				2B8EAB6D18D25EF600F21000 /* YKDirectVideo.m in Sources */,
 				A44DECD41C3BE9BE007C00B5 /* YKMainVideo.m in Sources */,
 				2B087EC318CB033900D31A86 /* main.m in Sources */,
@@ -452,7 +485,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -484,7 +517,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -492,10 +525,11 @@
 		};
 		2B087EE318CB033900D31A86 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5581D3BD1A5E7572BC294C2C /* Pods.debug.xcconfig */;
+			baseConfigurationReference = B99AF2381E2473B34D177E3F /* Pods-DemoApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = B7Q7CD6V8U;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DemoApp/DemoApp-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -503,6 +537,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "DemoApp/DemoApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -510,13 +545,15 @@
 		};
 		2B087EE418CB033900D31A86 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E72B093F742FE469BBF95909 /* Pods.release.xcconfig */;
+			baseConfigurationReference = DC9E6731AC029F2248E7F7AC /* Pods-DemoApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = B7Q7CD6V8U;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DemoApp/DemoApp-Prefix.pch";
 				INFOPLIST_FILE = "DemoApp/DemoApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -538,7 +575,7 @@
 				);
 				INFOPLIST_FILE = "DemoAppTests/DemoAppTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoApp.app/DemoApp";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -555,7 +592,7 @@
 				GCC_PREFIX_HEADER = "DemoApp/DemoApp-Prefix.pch";
 				INFOPLIST_FILE = "DemoAppTests/DemoAppTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoApp.app/DemoApp";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;

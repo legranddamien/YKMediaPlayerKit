@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "YKMediaPlayerKit"
-  s.version      = "0.0.5"
+  s.version      = "0.2"
   s.summary      = "Painlessly and natively play YouTube, Vimeo, and .MP4, .MOV, .MPV, .3GP videos and fetch thumbnails on your iOS devices"
   s.homepage     = "https://github.com/openwt/YKMediaPlayerKit"
   s.license      = 'MIT'
@@ -13,7 +13,6 @@ Pod::Spec.new do |s|
   s.frameworks   = 'UIKit', 'CoreGraphics'
   s.requires_arc = true
 
-  s.dependency 'HCYoutubeParser', '~> 0.0'
   s.dependency 'IGVimeoExtractor', '~> 1.2'
   s.dependency 'FBSDKCoreKit', '~> 4.8'
   s.dependency 'FBSDKLoginKit', '~> 4.8'
