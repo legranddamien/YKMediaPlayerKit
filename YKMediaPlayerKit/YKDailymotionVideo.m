@@ -56,7 +56,7 @@
         }
         
         NSError *jsonError;
-        _data = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
+        self.data = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
         
         if(jsonError)
         {
@@ -143,17 +143,7 @@
     
     if(self.data && self.data[@"embed_url"])
     {
-        if(YK_IOS8)
-        {
-            return [NSURL URLWithString:[self.data[@"embed_url"] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]];
-        }
-        else
-        {
-            _Pragma("clang diagnostic push")
-            _Pragma("clang diagnostic ignored \"-Wdeprecated-declarations\"")
-            return [NSURL URLWithString:[self.data[@"embed_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-            _Pragma("clang diagnostic pop")
-        }
+        return [NSURL URLWithString:[self.data[@"embed_url"] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]];
     }
     
     return self.contentURL;

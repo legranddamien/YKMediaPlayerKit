@@ -31,34 +31,8 @@ CGFloat const kDirectThumbnailLocation = 1.0;
     NSAssert(callback, @"usingBlock cannot be nil");
     
     [self buildPlayerWithQuality:quality];
-    
-    if(YK_IOS8)
-    {
-        _thumbnailCallback = callback;
-        [self.videoPlayer.player.currentItem addObserver:self forKeyPath:@"status" options:0 context:nil];
-    }
-    else
-    {
-        _Pragma("clang diagnostic push")
-        _Pragma("clang diagnostic ignored \"-Wdeprecated-declarations\"")
-        
-        [[NSNotificationCenter defaultCenter] addObserverForName:MPMoviePlayerThumbnailImageRequestDidFinishNotification object:self.player queue:[NSOperationQueue currentQueue] usingBlock:^(NSNotification *note) {
-            MPMoviePlayerController *newPlayer = note.object;
-            
-            if ([newPlayer.contentURL.absoluteString isEqualToString:[self videoURL:quality].absoluteString]) {
-                UIImage *thumb = note.userInfo[@"MPMoviePlayerThumbnailImageKey"];
-                NSError *error = note.userInfo[@"MPMoviePlayerThumbnailErrorKey"];
-                
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    if (callback) callback(thumb, error);
-                });
-            }
-        }];
-        
-        [self.player.moviePlayer requestThumbnailImagesAtTimes:@[@(kDirectThumbnailLocation)] timeOption:MPMovieTimeOptionExact];
-        
-        _Pragma("clang diagnostic pop")
-    }
+    _thumbnailCallback = callback;
+    [self.videoPlayer.player.currentItem addObserver:self forKeyPath:@"status" options:0 context:nil];
 }
 
 - (NSURL *)videoURL:(YKQualityOptions)quality

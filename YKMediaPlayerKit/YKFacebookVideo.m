@@ -79,8 +79,8 @@
             return;
         }
         
-        _embed = result[@"embed_html"];
-        _desc = result[@"description"];
+        self.embed = result[@"embed_html"];
+        self.desc = result[@"description"];
         
         NSArray *data = result[@"thumbnails"][@"data"];
         
@@ -93,15 +93,15 @@
                 return NSOrderedSame;
             }];
             
-            _thumbHigh = data[0][@"uri"];
+            self.thumbHigh = data[0][@"uri"];
             
             if(data.count > 1)
             {
-                _thumbMedium = data[1][@"uri"];
+                self.thumbMedium = data[1][@"uri"];
                 
                 if(data.count > 2)
                 {
-                    _thumbLow = data[2][@"uri"];
+                    self.thumbLow = data[2][@"uri"];
                 }
             }
         }

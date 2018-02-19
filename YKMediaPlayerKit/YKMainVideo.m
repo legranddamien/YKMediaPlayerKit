@@ -56,45 +56,19 @@
 
 - (BOOL)hasPlayerWithQuality:(YKQualityOptions)quality
 {
-    return (((YK_IOS8 && self.videoPlayer)
-             || (!YK_IOS8 && self.player)) && quality == _currentQuality);
+    return self.videoPlayer && quality == _currentQuality;
 }
 
 - (void)buildPlayerWithQuality:(YKQualityOptions)quality
 {
     if([self hasPlayerWithQuality:quality]) return;
     
-    if(YK_IOS8)
-    {
-        AVPlayerItem *item = [[AVPlayerItem alloc] initWithURL:[self videoURL:quality]];
-        AVPlayer *player = [[AVPlayer alloc] initWithPlayerItem:item];
-        
-        self.videoPlayer = [[YKAVPlayerViewController alloc] init];
-        self.videoPlayer.player = player;
-    }
-    else
-    {
-        _Pragma("clang diagnostic push")
-        _Pragma("clang diagnostic ignored \"-Wdeprecated-declarations\"")
-        
-        self.player = [[MPMoviePlayerViewController alloc] initWithContentURL:[self videoURL:quality]];
-        [self.player.moviePlayer setShouldAutoplay:NO];
-        [self.player.moviePlayer prepareToPlay];
-        
-        _Pragma("clang diagnostic pop")
-    }
-}
-
-_Pragma("clang diagnostic push")
-_Pragma("clang diagnostic ignored \"-Wdeprecated-declarations\"")
-- (MPMoviePlayerViewController *)movieViewController:(YKQualityOptions)quality {
-    self.player = [[MPMoviePlayerViewController alloc] initWithContentURL:[self videoURL:quality]];
-    [self.player.moviePlayer setShouldAutoplay:NO];
-    [self.player.moviePlayer prepareToPlay];
+    AVPlayerItem *item = [[AVPlayerItem alloc] initWithURL:[self videoURL:quality]];
+    AVPlayer *player = [[AVPlayer alloc] initWithPlayerItem:item];
     
-    return self.player;
+    self.videoPlayer = [[YKAVPlayerViewController alloc] init];
+    self.videoPlayer.player = player;
 }
-_Pragma("clang diagnostic pop")
 
 - (AVPlayerViewController *)playerViewController:(YKQualityOptions)quality
 {
@@ -105,37 +79,19 @@ _Pragma("clang diagnostic pop")
 
 - (void)play:(YKQualityOptions)quality {
     [self buildPlayerWithQuality:quality];
-    
-    if(YK_IOS8)
-    {
-        [self presentController:self.videoPlayer completion:^{
-            [self.videoPlayer.player play];
-        }];
-    }
-    else
-    {
-        [self presentController:self.player completion:^{
-            [self.player.moviePlayer play];
-        }];
-    }
+
+    [self presentController:self.videoPlayer completion:^{
+        [self.videoPlayer.player play];
+    }];
 }
 
 - (void)play:(YKQualityOptions)quality fromSourceController:(UIViewController *)sourceController
 {
     [self buildPlayerWithQuality:quality];
     
-    if(YK_IOS8)
-    {
-        [self presentController:self.videoPlayer sourceController:sourceController completion:^{
-            [self.videoPlayer.player play];
-        }];
-    }
-    else
-    {
-        [self presentController:self.player sourceController:sourceController completion:^{
-            [self.player.moviePlayer play];
-        }];
-    }
+    [self presentController:self.videoPlayer sourceController:sourceController completion:^{
+        [self.videoPlayer.player play];
+    }];
 }
 
 - (YKVideoAnimator *)presentAnimator
@@ -160,25 +116,13 @@ _Pragma("clang diagnostic pop")
 
 - (void)presentController:(UIViewController *)controller sourceController:(UIViewController *)sourceController completion:(void (^)(void))completion
 {
-    _Pragma("clang diagnostic push")
-    _Pragma("clang diagnostic ignored \"-Wdeprecated-declarations\"")
-    if(![controller isKindOfClass:[MPMoviePlayerViewController class]])
-    {
-        controller.transitioningDelegate = self;
-        controller.modalPresentationStyle = UIModalPresentationFullScreen;
-        [sourceController presentViewController:controller
-                                       animated:YES
-                                     completion:^{
-                                         if(completion) completion();
-                                     }];
-    }
-    else
-    {
-        [sourceController presentMoviePlayerViewControllerAnimated:(MPMoviePlayerViewController *)controller];
-        if(completion) completion();
-    }
-    
-    _Pragma("clang diagnostic pop")
+    controller.transitioningDelegate = self;
+    controller.modalPresentationStyle = UIModalPresentationFullScreen;
+    [sourceController presentViewController:controller
+                                   animated:YES
+                                 completion:^{
+                                     if(completion) completion();
+                                 }];
 }
 
 #pragma mark - UIViewControllerTransitioningDelegate
