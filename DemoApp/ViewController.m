@@ -44,14 +44,14 @@ NSString *const kUnknownVideo = @"http://www.dailymotion.com/video/x21nmr3_exclu
     
     _youTubeVideo = [[YKYouTubeVideo alloc] initWithContent:[NSURL URLWithString:kYouTubeVideo]];
     [_youTubeVideo parseWithCompletion:^(NSError *error) {
-        [_youTubeVideo thumbImage:YKQualityLow completion:^(UIImage *thumbImage, NSError *error) {
+        [self->_youTubeVideo thumbImage:YKQualityLow completion:^(UIImage *thumbImage, NSError *error) {
             self.youTubeView.image = thumbImage;
         }];
     }];
 
     _vimeoVideo = [[YKVimeoVideo alloc] initWithContent:[NSURL URLWithString:kVimeoVideo]];
     [_vimeoVideo parseWithCompletion:^(NSError *error) {
-        [_vimeoVideo thumbImage:YKQualityLow completion:^(UIImage *thumbImage, NSError *error) {
+        [self->_vimeoVideo thumbImage:YKQualityLow completion:^(UIImage *thumbImage, NSError *error) {
             self.vimeoView.image = thumbImage;
         }];
     }];

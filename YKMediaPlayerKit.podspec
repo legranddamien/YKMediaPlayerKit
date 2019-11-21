@@ -14,6 +14,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.dependency 'IGVimeoExtractor', '~> 1.2'
-  s.dependency 'FBSDKCoreKit', '~> 4.8'
-  s.dependency 'FBSDKLoginKit', '~> 4.8'
+  s.dependency 'FBSDKCoreKit', '~> 5.11'
+  s.dependency 'FBSDKLoginKit', '~> 5.11'
 end
