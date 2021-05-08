@@ -1,19 +1,19 @@
 PODS:
-  - FBSDKCoreKit (7.1.1):
-    - FBSDKCoreKit/Basics (= 7.1.1)
-    - FBSDKCoreKit/Core (= 7.1.1)
-  - FBSDKCoreKit/Basics (7.1.1)
-  - FBSDKCoreKit/Core (7.1.1):
+  - FBSDKCoreKit (9.3.0):
+    - FBSDKCoreKit/Basics (= 9.3.0)
+    - FBSDKCoreKit/Core (= 9.3.0)
+  - FBSDKCoreKit/Basics (9.3.0)
+  - FBSDKCoreKit/Core (9.3.0):
     - FBSDKCoreKit/Basics
-  - FBSDKLoginKit (7.1.1):
-    - FBSDKLoginKit/Login (= 7.1.1)
-  - FBSDKLoginKit/Login (7.1.1):
-    - FBSDKCoreKit (~> 7.1.1)
+  - FBSDKLoginKit (9.3.0):
+    - FBSDKLoginKit/Login (= 9.3.0)
+  - FBSDKLoginKit/Login (9.3.0):
+    - FBSDKCoreKit (~> 9.3.0)
   - IGVimeoExtractor (1.2.0)
 
 DEPENDENCIES:
-  - FBSDKCoreKit (~> 7.1)
-  - FBSDKLoginKit (~> 7.1)
+  - FBSDKCoreKit (~> 9.3)
+  - FBSDKLoginKit (~> 9.3)
   - IGVimeoExtractor (~> 1.2)
 
 SPEC REPOS:
@@ -23,10 +23,10 @@ SPEC REPOS:
     - IGVimeoExtractor
 
 SPEC CHECKSUMS:
-  FBSDKCoreKit: b46507dc8b8cefed31d644e74d7cc30e2a715ef8
-  FBSDKLoginKit: 1a61d79e2b25e2fc0d03dccab1e34b38bbdf2546
+  FBSDKCoreKit: 0d1ae58388a458b8222f72025804cdc84eb5d0c3
+  FBSDKLoginKit: aea68df6121c5e165ccae2fabfdc83c4644ee40f
   IGVimeoExtractor: 84dd81e5bd7da82bcf99db246031edfda7313752
 
-PODFILE CHECKSUM: 8db8af268168603616360b9ef3aa28158adfc906
+PODFILE CHECKSUM: c63a80cb2abb963305081e10d6780c86d1dadc4d
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.1
